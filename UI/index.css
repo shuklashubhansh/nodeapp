@@ -48,6 +48,7 @@ input:focus{
     color:white;
     display: grid;
     place-items: center;
+    cursor:pointer;
 }
 .listitem:hover {
     background: lightcoral;
