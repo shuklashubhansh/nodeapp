@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body onload = "initUI()">
+        <div class = "parent">
+            <header>
+                <input type="text" id="givenname" placeholder="Name"/>
+                <input type="text" id="givenoccupation" placeholder="Occupation"/>
+                <Button id="givenaddbtn" class="addbutton" onclick="postdata()">Add</Button>
+            </header>
+            <content class="gridview"></content>
+            <footer></footer>
+        </div>
+        <div class="toast"></div>
+    </body>
+</html>

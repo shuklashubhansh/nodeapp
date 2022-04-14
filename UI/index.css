@@ -1,0 +1,68 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top:0;
+    background: white;
+    z-index: 1;
+}
+input {
+    height:50px;
+    margin:1%;
+    flex:1;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    transition: 0.3s;
+}
+input:focus{
+    text-decoration: none;
+    outline: none;
+    border-bottom-color: blueviolet;
+}
+.addbutton {
+    flex: 1;
+    background: blueviolet;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    margin: 1%;
+}
+.addbutton:active {
+    background: black;
+    transform: scale(0.95);
+}
+.gridview {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.listitem {
+    background: lightgreen;
+    width:32.5%;
+    min-height: 30vh;
+    text-align: center;
+    margin:1px;
+    transition: 0.3s;
+    color:white;
+    display: grid;
+    place-items: center;
+}
+.listitem:hover {
+    background: lightcoral;
+    transform: scale(0.98);
+}
+.toast {
+    background:darkslategray;
+    color:whitesmoke;
+    width:30%;
+    height:10vh;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    display: none;
+    place-items: center;
+}
