@@ -10,6 +10,6 @@ How to Run:-
 
 - Go to server folder through cmd and execute the command <node test.js> to run the local NodeJS server.
 
--Make sure CORS is configured on your browser and if not then download the extension for it and run.
+- Make sure CORS is configured on your browser and if not then download the extension for it and run.
 
--Go to UI folder and simply run index.html
+- Go to UI folder and simply run index.html
