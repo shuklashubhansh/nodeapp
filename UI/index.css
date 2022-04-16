@@ -9,7 +9,7 @@ header {
 }
 input {
     height:50px;
-    margin:1%;
+    margin:0 1% 1% 0;
     flex:1;
     border: none;
     border-bottom: 2px solid lightgray;
@@ -27,23 +27,30 @@ input:focus{
     color: white;
     font-weight: bold;
     transition: 0.3s;
-    margin: 1%;
+    margin: 0 0 1% 0;
 }
 .addbutton:active {
     background: black;
     transform: scale(0.95);
 }
-.gridview {
+/* Use flexview class for having flexbox model view */
+.flexview {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
+/* Use gridview class for having grid model view */
+.gridview {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
 .listitem {
     background: lightgreen;
-    width:32.5%;
+    /* comment width property in case use of gridview */
+    width:33.20%;
     min-height: 30vh;
     text-align: center;
-    margin:1px;
+    margin: 0 1px 1px 0;
     transition: 0.3s;
     color:white;
     display: grid;

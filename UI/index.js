@@ -1,6 +1,6 @@
 var popup;
 initUI = () => {
-    var grid = document.querySelector(".gridview");
+    var grid = document.querySelector("#grid");
     popup = document.querySelector('.toast');
     getdata(grid);
 }
