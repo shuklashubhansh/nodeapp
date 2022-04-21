@@ -20,11 +20,11 @@ input {
 input:focus{
     text-decoration: none;
     outline: none;
-    border-bottom-color: blueviolet;
+    border-bottom-color: dodgerblue;
 }
 .addbutton {
     flex: 1;
-    background: blueviolet;
+    background: dodgerblue;
     border: none;
     color: white;
     font-weight: bold;
@@ -68,7 +68,7 @@ input:focus{
     transform: scale(0.98);
 }
 .toast {
-    background:blueviolet;
+    background:dodgerblue;
     color:whitesmoke;
     width:30%;
     height:10vh;
