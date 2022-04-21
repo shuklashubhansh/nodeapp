@@ -51,7 +51,7 @@ input:focus{
     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
 }
 .listitem {
-    background: lightgreen;
+    background: crimson;
     /* comment width property in case use of gridview */
     width:32.33%;
     min-height: 30vh;
