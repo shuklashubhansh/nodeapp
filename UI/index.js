@@ -60,6 +60,17 @@ generateUI = (data, parent) => {
     })
 }
 
+searchUI = () => {
+    let val = document.querySelector('#givensearch').value.toUpperCase();
+    document.querySelectorAll('.listitem').forEach((item)=>{
+        if(item.innerText.toUpperCase().indexOf(val)>-1){
+            item.style.display='grid';
+        } else {
+            item.style.display='none';
+        }
+    })
+}
+
 showPop = (message) => {
     popup.innerText=message;
     popup.style.display='grid';
