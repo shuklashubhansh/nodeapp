@@ -67,15 +67,35 @@ input:focus{
     background: lightcoral;
     transform: scale(0.98);
 }
+.scroller {
+    position: fixed;
+    height: 70px;
+    width: 70px;
+    background: dodgerblue;
+    margin: 2%;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    transition: 0.3s;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.scroller:active {
+    transform: scale(0.5);
+}
 .toast {
-    background:dodgerblue;
-    color:whitesmoke;
-    width:30%;
-    height:10vh;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    background: dodgerblue;
+    color: whitesmoke;
+    width: 30%;
+    height: 10vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 10px;
     display: none;
     place-items: center;

@@ -47,7 +47,7 @@ deletedata = async (data) => {
 }
 
 generateUI = (data, parent) => {
-    var data = data;
+    var data = data.reverse();
     data.map((item, index) => {
         let d = document.createElement('div');
         let btn = document.createElement('img');
@@ -56,7 +56,7 @@ generateUI = (data, parent) => {
         btn.src="close.png";
         d.appendChild(btn);
         parent.appendChild(d);
-        btn.addEventListener('click', ()=>{data.splice(index,1); deletedata(data)});
+        btn.addEventListener('click', ()=>{data.splice(index,1); data = data.reverse(); deletedata(data)});
     })
 }
 
@@ -69,6 +69,10 @@ searchUI = () => {
             item.style.display='none';
         }
     })
+}
+
+scrollUI = () => {
+    window.scroll({top:0, behavior:"smooth"});
 }
 
 showPop = (message) => {
