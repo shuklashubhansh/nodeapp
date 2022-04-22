@@ -51,9 +51,11 @@ generateUI = (data, parent) => {
     data.map((item, index) => {
         let d = document.createElement('div');
         let btn = document.createElement('img');
+        let para = document.createElement('p');
         d.classList.add('listitem');
-        d.innerHTML = item.name + ' - ' + item.occupation;
+        para.innerText = item.name + ' - ' + item.occupation;
         btn.src="close.png";
+        d.appendChild(para);
         d.appendChild(btn);
         parent.appendChild(d);
         btn.addEventListener('click', ()=>{data.splice(index,1); data = data.reverse(); deletedata(data)});
@@ -64,7 +66,7 @@ searchUI = () => {
     let val = document.querySelector('#givensearch').value.toUpperCase();
     document.querySelectorAll('.listitem').forEach((item)=>{
         if(item.innerText.toUpperCase().indexOf(val)>-1){
-            item.style.display='grid';
+            item.style.display='flex';
         } else {
             item.style.display='none';
         }

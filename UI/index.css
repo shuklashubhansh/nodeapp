@@ -59,13 +59,18 @@ input:focus{
     margin: 0.5%;
     transition: 0.3s;
     color:white;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     cursor:pointer;
 }
 .listitem:hover {
     background: lightcoral;
     transform: scale(0.98);
+}
+.listitem p {
+    flex:1;
+    align-self: center;
 }
 .scroller {
     position: fixed;
