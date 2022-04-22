@@ -51,7 +51,7 @@ input:focus{
     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
 }
 .listitem {
-    background: crimson;
+    background: linear-gradient(45deg, dodgerblue, lightblue);
     /* comment width property in case use of gridview */
     width:32.33%;
     min-height: 30vh;
@@ -65,8 +65,8 @@ input:focus{
     cursor:pointer;
 }
 .listitem:hover {
-    background: lightcoral;
     transform: scale(0.98);
+    filter: hue-rotate(-45deg);
 }
 .listitem p {
     flex:1;
