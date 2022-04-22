@@ -55,6 +55,7 @@ generateUI = (data, parent) => {
         d.classList.add('listitem');
         para.innerText = item.name + ' - ' + item.occupation;
         btn.src="close.png";
+        btn.style.width="30px";
         d.appendChild(para);
         d.appendChild(btn);
         parent.appendChild(d);
