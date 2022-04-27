@@ -60,6 +60,7 @@ generateUI = (data, parent) => {
         d.appendChild(btn);
         parent.appendChild(d);
         btn.addEventListener('click', ()=>{data.splice(index,1); data = data.reverse(); deletedata(data)});
+        d.addEventListener('click',()=>showPop(`${item.name} is ${item.occupation} by profession.`));
     })
 }
 

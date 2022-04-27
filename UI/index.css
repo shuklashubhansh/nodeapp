@@ -93,10 +93,12 @@ input:focus{
     transform: scale(0.5);
 }
 .toast {
-    background: dodgerblue;
+    background: rebeccapurple;
     color: whitesmoke;
     width: 30%;
     height: 10vh;
+    text-align: center;
+    padding: 5px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -104,4 +106,5 @@ input:focus{
     border-radius: 10px;
     display: none;
     place-items: center;
+    box-shadow: 0 20px 15px -20px black;
 }
