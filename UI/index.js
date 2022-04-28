@@ -80,9 +80,10 @@ scrollUI = () => {
 }
 
 showPop = (message) => {
+    clearTimeout(this.timeout);
     popup.innerText=message;
     popup.style.display='grid';
-    setTimeout(()=>{popup.style.display='none'},3000);
+    this.timeout = setTimeout(()=>{popup.style.display='none'},3000);
 }
 
 handleError = (errorMessage, parentElement) => {
