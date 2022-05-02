@@ -92,6 +92,10 @@ input:focus{
 .scroller:active {
     transform: scale(0.5);
 }
+@keyframes toastanimation {
+    from{transform: translate(-50%, -50%) scale(0);}
+    to{transform: translate(-50%, -50%) scale(1)}
+}
 .toast {
     background: rebeccapurple;
     color: whitesmoke;
@@ -105,6 +109,19 @@ input:focus{
     transform: translate(-50%, -50%);
     border-radius: 10px;
     display: none;
-    place-items: center;
+    flex-direction: row;
+    justify-content: space-around;
     box-shadow: 0 20px 15px -20px black;
+    animation-name: toastanimation;
+    animation-duration: 0.5s;
+}
+.toast p {
+    flex:1;
+    align-self: center;
+}
+.toast img {
+    align-self: flex-start;
+    width: 30px;
+    filter: invert();
+    cursor: pointer;
 }
