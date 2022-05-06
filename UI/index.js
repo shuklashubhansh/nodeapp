@@ -16,12 +16,12 @@ getdata = async (parent) => {
 }
 
 postdata = async () => {
-    let name = document.querySelector('#givenname').value;
-    let occupation = document.querySelector('#givenoccupation').value;
-    if(!name || !occupation){
-        showPop("Please fill up all the details!", true);
+    let name = document.querySelector('#givenname');
+    let occupation = document.querySelector('#givenoccupation');
+    if(!name.checkValidity() || !occupation.checkValidity() || !name.value || !occupation.value){
+        showPop("Please fill up all the details correctly!", true);
     } else {
-        const obj = [{ name: name, occupation: occupation }];
+        const obj = [{ name: name.value, occupation: occupation.value }];
         let response = await fetch("http://localhost:8080/writedata",
         { method: 'POST', body: JSON.stringify(obj)}).catch((error)=>{showPop("Yikes! Unable to update the details.", true)});
 

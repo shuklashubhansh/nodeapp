@@ -22,6 +22,9 @@ input:focus{
     outline: none;
     border-bottom-color: dodgerblue;
 }
+input:invalid{
+    border-bottom-color: crimson;
+}
 .addbutton {
     flex: 1;
     background: dodgerblue;

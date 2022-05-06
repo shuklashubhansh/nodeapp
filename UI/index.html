@@ -8,8 +8,8 @@
         <div class = "parent">
             <header>
                 <div class="addwidget">
-                <input type="text" id="givenname" placeholder="Name"/>
-                <input type="text" id="givenoccupation" placeholder="Occupation"/>
+                <input type="text" id="givenname" placeholder="Name" pattern ="^[a-zA-Z0-9]{0,}[^{}\[\]]+$" />
+                <input type="text" id="givenoccupation" placeholder="Occupation" pattern ="^[a-zA-Z0-9]{0,}[^{}\[\]]+$" />
                 <Button id="givenaddbtn" class="addbutton" onclick="postdata()">Add</Button>
                 </div>
                 <input type="text" id="givensearch" placeholder="Search" onkeyup="searchUI()"/>
