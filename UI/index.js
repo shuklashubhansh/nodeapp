@@ -1,4 +1,5 @@
 var popup;
+var timeout;
 initUI = () => {
     var grid = document.querySelector("#grid");
     popup = document.querySelector('.toast');
@@ -80,13 +81,16 @@ scrollUI = () => {
 }
 
 showPop = (message, autoclose) => {
-    clearTimeout(this.timeout);
-    if(autoclose){
-        this.timeout = setTimeout(()=>{popup.style.display='none'},3000);
-     }
+    clearTimeout(timeout);
     popup.childNodes[0].innerText=message;
     popup.childNodes[1].addEventListener('click',()=>popup.style.display='none');
     popup.style.display='flex';
+    if(autoclose){
+        popup.classList.add('validationtoast');
+        timeout = setTimeout(()=>{popup.style.display='none'},3000);
+     } else{
+         popup.classList.remove('validationtoast');
+     }
 }
 
 handleError = (errorMessage, parentElement) => {

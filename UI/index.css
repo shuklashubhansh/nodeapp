@@ -99,6 +99,10 @@ input:invalid{
     from{transform: translate(-50%, -50%) scale(0);}
     to{transform: translate(-50%, -50%) scale(1)}
 }
+@keyframes validationtoastanimation {
+    from{top:100%}
+    to{top:50%}
+}
 .toast {
     background: rebeccapurple;
     color: whitesmoke;
@@ -127,4 +131,9 @@ input:invalid{
     width: 30px;
     filter: invert();
     cursor: pointer;
+}
+.validationtoast {
+    background: crimson;
+    animation-name: validationtoastanimation;
+    animation-duration: 0.5s;
 }
