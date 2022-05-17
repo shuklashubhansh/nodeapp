@@ -1,5 +1,6 @@
 var popup;
 var timeout;
+var isDBProfile = configuration.isDBProfile;
 initUI = () => {
     var grid = document.querySelector("#grid");
     popup = document.querySelector('.toast');
@@ -60,7 +61,11 @@ generateUI = (data, parent) => {
         d.appendChild(para);
         d.appendChild(btn);
         parent.appendChild(d);
+        if(isDBProfile){
+        btn.addEventListener('click', ()=>{event.stopPropagation(); data = data.reverse(); deletedata([item])});
+        } else {
         btn.addEventListener('click', ()=>{event.stopPropagation(); data.splice(index,1); data = data.reverse(); deletedata(data)});
+        }
         d.addEventListener('click',()=>showPop(`${item.name} is ${item.occupation} by profession.`, false));
     })
 }
