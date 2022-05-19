@@ -1,9 +1,17 @@
 var popup;
 var timeout;
 var isDBProfile = configuration.isDBProfile;
+var pname;
+var occupation;
+var searchtext;
+var grid;
+
 initUI = () => {
-    var grid = document.querySelector("#grid");
+    grid = document.querySelector("#grid");
     popup = document.querySelector('.toast');
+    pname = document.querySelector('#givenname');
+    occupation = document.querySelector('#givenoccupation');
+    searchtext = document.querySelector('#givensearch');
     getdata(grid);
 }
 
@@ -18,18 +26,17 @@ getdata = async (parent) => {
 }
 
 postdata = async () => {
-    let name = document.querySelector('#givenname');
-    let occupation = document.querySelector('#givenoccupation');
-    if(!name.checkValidity() || !occupation.checkValidity() || !name.value || !occupation.value){
+    if(!pname.checkValidity() || !occupation.checkValidity() || !pname.value || !occupation.value){
         showPop("Please fill up all the details correctly!", true);
     } else {
-        const obj = [{ name: name.value, occupation: occupation.value }];
+        const obj = [{ name: pname.value, occupation: occupation.value }];
         let response = await fetch("http://localhost:8080/writedata",
         { method: 'POST', body: JSON.stringify(obj)}).catch((error)=>{showPop("Yikes! Unable to update the details.", true)});
 
         if (response.status == 200) {
             let data = await response.json();
-            window.location.reload();
+            clearfields();
+            initUI();
         } else {
             showPop(`Unable to update the details - ${response.status}`, true);
         }
@@ -42,13 +49,15 @@ deletedata = async (data) => {
 
     if (response.status == 200) {
         let data = await response.json();
-        window.location.reload();
+        clearfields();
+        initUI();
     } else {
         showPop(`Unable to delete - ${response.status}`, true);
     }
 }
 
 generateUI = (data, parent) => {
+    parent.innerHTML='';
     var data = data.reverse();
     data.map((item, index) => {
         let d = document.createElement('div');
@@ -71,7 +80,7 @@ generateUI = (data, parent) => {
 }
 
 searchUI = () => {
-    let val = document.querySelector('#givensearch').value.toUpperCase();
+    let val = searchtext.value.toUpperCase();
     document.querySelectorAll('.listitem').forEach((item)=>{
         if(item.innerText.toUpperCase().indexOf(val)>-1){
             item.style.display='flex';
@@ -101,4 +110,8 @@ showPop = (message, autoclose) => {
 handleError = (errorMessage, parentElement) => {
     showPop(errorMessage, true);
     parentElement.innerHTML="<H2 style='color:red;'>Something went wrong. Please try after sometime.</H2>";
+}
+
+clearfields = () => {
+    pname.value = occupation.value = searchtext.value = '';
 }
