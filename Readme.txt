@@ -4,7 +4,21 @@ Hey Guys!
 
 This is a sample application on Javascript on Frontend and NodeJS on Backend that demonstrate add and remove data in JSON Filesystem as well as on Mysql database.
 
-How to Run:-
+
+>How to run the app using Filesystem:-
+
+- Clone the repository to your local setup.
+
+- Go to server folder through cmd and execute the command <node test.js> to run the local NodeJS server for demonstrating Filesystem.
+
+- Go to the config.js and set isDBProfile as false.
+
+- Make sure CORS is configured on your browser and if not then download the extension for it and run.
+
+- Go to UI folder and simply run index.html
+
+
+>How to run the app using Mysql database system:-
 
 - Make sure you have Mysql server installed and running on your system.
 
@@ -12,11 +26,11 @@ How to Run:-
 
 - Execute the command <npm install> into the root folder.
 
-- Go to server folder through cmd and execute the command <node test.js> to run the local NodeJS server for demonstrating Filesystem.
+- Open testdb.js and configure Mysql connection's configurations like host, user, port and password.
 
 - Go to server folder through cmd and execute the command <node testdb.js> to run the local NodeJS server for demonstrating Mysql DBMS.
 
--Go to the config.js and set isDBProfile as true incase of using MYSQL DBMS otherwise set it as false.
+- Go to the config.js and set isDBProfile as true.
 
 - Make sure CORS is configured on your browser and if not then download the extension for it and run.
 
