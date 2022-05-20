@@ -62,6 +62,7 @@ input:invalid{
     margin: 0.5%;
     transition: 0.3s;
     color:white;
+    box-shadow: 0 20px 15px -20px black;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -70,6 +71,7 @@ input:invalid{
 .listitem:hover {
     transform: scale(0.98);
     filter: hue-rotate(-45deg);
+    box-shadow: none;
 }
 .listitem p {
     flex:1;
