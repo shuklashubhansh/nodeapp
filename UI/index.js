@@ -64,7 +64,7 @@ generateUI = (data, parent) => {
         let btn = document.createElement('img');
         let para = document.createElement('p');
         d.classList.add('listitem');
-        para.innerText = item.name + ' - ' + item.occupation;
+        para.innerText = item.name;
         btn.src="close.png";
         btn.style.width="30px";
         d.appendChild(para);
@@ -75,7 +75,7 @@ generateUI = (data, parent) => {
         } else {
         btn.addEventListener('click', ()=>{event.stopPropagation(); data.splice(index,1); data = data.reverse(); deletedata(data)});
         }
-        d.addEventListener('click',()=>showPop(`${item.name} is ${item.occupation} by profession.`, false));
+        d.addEventListener('click',()=>showPop(`${item.name} is a great Indian Personality.`, false));
     })
 }
 
