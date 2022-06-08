@@ -6,7 +6,7 @@ var mongourl = "mongodb+srv://root:<password>@cluster0.oomvg.mongodb.net/?retryW
 
 mongodbclient.connect(mongourl, function (err, db) {
     if (err) throw err;
-    var con = db.db("mydb");
+    var con = db.db("NodeAppDB");
     console.log('connected to database successfully.');
 
     http.createServer(function (req, res) {
